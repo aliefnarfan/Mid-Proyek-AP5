@@ -10,8 +10,10 @@ _* Project ini menggunakan arsitektur MVC (Model-View-Controller) untuk memisahk
 - views/ (Antarmuka Terminal) : Berisi kode tampilan teks dan menu interaktif untuk user di terminal. Semua input maupun output ke pengguna terjadi di sini.
 
 ## Cara menambahkan file pada folder controllers / models / views
-```python manage.py make:model|controller|view <name>```
 Jadi, gunakan perintah berikut di terminal:
+```python manage.py make:model|controller|view <name>```
+
+Contoh :
 ```python manage.py make:view user```
 
 _* File manage.py digunakan untuk membuat file baru (model, controller, atau view) secara otomatis agar struktur project tetap rapi dan konsisten._
