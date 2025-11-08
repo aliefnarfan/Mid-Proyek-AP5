@@ -14,9 +14,11 @@ db = mysql.connector.connect(
 )
 cursor = db.cursor()
 
+cursor = db.cursor(dictionary=True)
+
 # Mengecek koneksi database ke Python
-#if db.is_connected():
-#   print("berhasil.")
+# if db.is_connected():
+#    print("berhasil.")
 
 # Buat database
 # cursor.execute("CREATE DATABASE game_adventure")
@@ -49,13 +51,28 @@ cursor = db.cursor()
 #     score INT DEFAULT 0
 # );
 # ''')
+
 # # 3. Tabel Inventory
 # cursor.execute('''
-#     CREATE TABLE inventory_items (
-#         id INT AUTO_INCREMENT PRIMARY KEY,
-#         character_id INT NOT NULL,
-#         item_name VARCHAR(100) NOT NULL,
-#         quantity INT DEFAULT 1,
-#         FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE
-#     );
+    # CREATE TABLE inventory (
+    #     id INT AUTO_INCREMENT PRIMARY KEY,
+    #     character_id INT NOT NULL,
+    #     item_id INT NOT NULL,
+    #     quantity INT DEFAULT 1,
+    #     FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+    #     FOREIGN KEY (item_id) REFERENCES shop_items(id) ON DELETE CASCADE
+    # );
+
+# ''')
+
+# 4. Tabel Shop Items (global)
+# cursor.execute('''
+# CREATE TABLE IF NOT EXISTS shop_items (
+#     id INT AUTO_INCREMENT PRIMARY KEY,
+#     item_name VARCHAR(100) NOT NULL,
+#     description TEXT,
+#     item_type ENUM('weapon', 'armor', 'potion', 'misc') DEFAULT 'misc',
+#     price INT NOT NULL,
+#     min_floor INT DEFAULT 1
+# );
 # ''')
