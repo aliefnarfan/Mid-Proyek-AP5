@@ -1,6 +1,7 @@
 # Controller for quest
 import random
 from models.quest_model import QuestData
+from controllers.leaderboard_controller import update_player_score
 
 class QuestController:
     def __init__(self, character):
