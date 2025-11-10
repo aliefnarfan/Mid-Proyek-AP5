@@ -12,7 +12,6 @@ db = mysql.connector.connect(
     database=os.getenv("DB_NAME"),
     port=int(os.getenv("DB_PORT"))
 )
-cursor = db.cursor()
 
 cursor = db.cursor(dictionary=True)
 
@@ -34,7 +33,7 @@ cursor = db.cursor(dictionary=True)
 #     )
 # ''')
 
-# # 2. Tabel karakter dalam game
+# # # 2. Tabel karakter dalam game
 # cursor.execute('''
 #     CREATE TABLE characters (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -52,19 +51,6 @@ cursor = db.cursor(dictionary=True)
 # );
 # ''')
 
-# # 3. Tabel Inventory
-# cursor.execute('''
-    # CREATE TABLE inventory (
-    #     id INT AUTO_INCREMENT PRIMARY KEY,
-    #     character_id INT NOT NULL,
-    #     item_id INT NOT NULL,
-    #     quantity INT DEFAULT 1,
-    #     FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
-    #     FOREIGN KEY (item_id) REFERENCES shop_items(id) ON DELETE CASCADE
-    # );
-
-# ''')
-
 # 4. Tabel Shop Items (global)
 # cursor.execute('''
 # CREATE TABLE IF NOT EXISTS shop_items (
@@ -76,3 +62,18 @@ cursor = db.cursor(dictionary=True)
 #     min_floor INT DEFAULT 1
 # );
 # ''')
+
+# # # 3. Tabel Inventory
+# cursor.execute('''
+#     CREATE TABLE inventory (
+#     id INT AUTO_INCREMENT PRIMARY KEY,
+#     character_id INT NOT NULL,
+#     item_id INT NOT NULL,
+#     quantity INT DEFAULT 1,
+#     FOREIGN KEY (character_id) REFERENCES characters(id) ON DELETE CASCADE,
+#     FOREIGN KEY (item_id) REFERENCES shop_items(id) ON DELETE CASCADE
+#     );
+
+# ''')
+
+
