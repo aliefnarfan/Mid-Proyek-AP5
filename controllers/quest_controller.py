@@ -8,7 +8,7 @@ class QuestController:
         self.active_quest = None
 
     def bikin_quest(self):
-         # Jika sudah menyelesaikan 3 quest biasa, munculkan quest boss
+        # Jika sudah menyelesaikan 3 quest biasa, munculkan quest boss
         if self.karakter.quest_selesai >= 3:
             self.buat_quest_boss()
             self.karakter.quest_selesai = 0  # reset counter setelah boss

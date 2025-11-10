@@ -56,7 +56,14 @@ Tujuannya supaya bisa mengontrol tiap tahap pembuatan, dan tahu kalau ada error 
 - Jika sudah ada, kembalikan komentar (#) agar tidak terbuat ulang setiap kali dijalankan.
 
 3. Buat Tabel Characters
-- Un-comment bagian line 36-53
+- Un-comment bagian line 36-51
+- Jalankan kembali:
+```python utils/database.py```
+- Cek di localhost untuk memastikan tabel users sudah ada.
+- Jika sudah ada, kembalikan komentar (#) agar tidak terbuat ulang setiap kali dijalankan.
+
+3. Buat Tabel Inventory
+- Un-comment bagian line 54-62
 - Jalankan kembali:
 ```python utils/database.py```
 - Cek di localhost untuk memastikan tabel users sudah ada.

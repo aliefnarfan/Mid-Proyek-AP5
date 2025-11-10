@@ -14,6 +14,10 @@ db = mysql.connector.connect(
 )
 cursor = db.cursor()
 
+def close_connection():
+    cursor.close()
+    db.close()
+
 # Mengecek koneksi database ke Python
 #if db.is_connected():
 #   print("berhasil.")
@@ -49,6 +53,7 @@ cursor = db.cursor()
 #     score INT DEFAULT 0
 # );
 # ''')
+
 # # 3. Tabel Inventory
 # cursor.execute('''
 #     CREATE TABLE inventory_items (
